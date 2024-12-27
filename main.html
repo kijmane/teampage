@@ -122,7 +122,25 @@
             </div>
         </div>
     </div>
-    <div class="container"> /* html 방명록 */
+    <script>
+        document.getElementById("card1").addEventListener("click", function() {
+      window.location.href = "profile.html";
+    });
+
+    document.getElementById("card2").addEventListener("click", function() {
+      window.location.href = "page2.html"; // 두 번째 카드 클릭 시 이동할 페이지
+    });
+    document.getElementById("card3").addEventListener("click", function() {
+      window.location.href = "page1.html"; // 첫 번째 카드 클릭 시 이동할 페이지
+    });
+
+    document.getElementById("card4").addEventListener("click", function() {
+      window.location.href = "page2.html"; // 두 번째 카드 클릭 시 이동할 페이지
+    });
+    </script>
+
+    <!--방명록 작성란-->
+    <div class="container">
         <div class="guestbook-title">방명록</div>
         <div class="input-section">
             <input type="text" id="nameInput" placeholder="이름 입력">
@@ -142,43 +160,28 @@
             </table>
         </div>
     </div>
-</div> /* html 방명록 */
     <script>
-        document.getElementById("card1").addEventListener("click", function() {
-      window.location.href = "profile.html";
-    });
+        document.getElementById("submitButton").addEventListener("click", function () {
+        const name = document.getElementById("nameInput").value.trim(); 
+        const comment = document.getElementById("commentInput").value.trim(); 
+        if (name && comment) {
+        const tableBody = document.getElementById("guestbookEntries");
 
-    document.getElementById("card2").addEventListener("click", function() {
-      window.location.href = "page2.html"; // 두 번째 카드 클릭 시 이동할 페이지
-    });
-    document.getElementById("card3").addEventListener("click", function() {
-      window.location.href = "page1.html"; // 첫 번째 카드 클릭 시 이동할 페이지
-    });
+        const newRow = tableBody.insertRow();
 
-    document.getElementById("card4").addEventListener("click", function() {
-      window.location.href = "page2.html"; // 두 번째 카드 클릭 시 이동할 페이지
-    });
+        const nameCell = newRow.insertCell(0);
+        nameCell.textContent = name;
+
+        const commentCell = newRow.insertCell(1);
+        commentCell.textContent = comment;
+
+        document.getElementById("nameInput").value = "";
+        document.getElementById("commentInput").value = "";
+  } else {
+        alert("이름과 코멘트를 모두 입력해주세요.");
+  }
+});
     </script>
-
-    <!--코멘트 작성란-->
-    <div class="comment_container">
-        <div class="comment">
-            <div class="comment_box">
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="name" placeholder="이름을 입력하세요">
-                    <label for="floatingInput">이름</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="comment" placeholder="코멘트를 입력하세요">
-                    <label for="floatingInput">코멘트</label>
-                </div>
-                <div class="mybtn">
-                    <button id="postingbtn" type="button" class="btn btn-danger">등록하기</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </body>
 
 </html>
