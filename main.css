@@ -47,7 +47,7 @@ ul {
 /*컨테이너 영역-*/
 
 .info_container{
-    height: 100hv;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     gap: 20px;
