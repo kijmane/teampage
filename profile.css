@@ -181,7 +181,6 @@ section>h1 {
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    /*넓이 값을 0 */
     border-right: 0.5rem solid #b21697;
     animation: typing steps(12, end) 2s forwards;
 }
@@ -196,4 +195,8 @@ section>h1 {
         width: 100%
     }
 
+}
+
+.project .card-title {
+    border-bottom: 1px solid rgba(211, 212, 214, 0.288); 
 }
