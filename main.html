@@ -8,7 +8,64 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="Stylesheet" href="main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <!--스크롤 기능(만들 예정))-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module">
+
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+        // Firebase 구성 정보 설정
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyA3yuDMpTjrPHpMC45hjq8XgVbK3sl1rPI",
+            authDomain: "sparta-829cf.firebaseapp.com",
+            projectId: "sparta-829cf",
+            storageBucket: "sparta-829cf.firebasestorage.app",
+            messagingSenderId: "911031055174",
+            appId: "1:911031055174:web:37075355e525cf26aaeb47",
+            measurementId: "G-M0R0LLLFT8"
+        };
+
+
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        $("#submitButton").click(async function () {
+            let nameInput = $('#nameInput').val();
+            let commentInput = $('#commentInput').val();
+            
+
+            let doc = {
+                'nameInput': nameInput,
+                'commentInput': commentInput,
+            };
+            await addDoc(collection(db, "guestbookEntries"), doc);
+            alert('등록 완료!');
+            window.location.reload();
+        })
+
+        let docs = await getDocs(collection(db, "guestbookEntries"));
+        docs.forEach((doc) => {
+            let row = doc.data();
+            console.log(row);
+
+            let nameInput = row['nameInput'];
+            let commentInput = row['commentInput'];
+        });
+
+    </script>
+
+
 </head>
 
 <body>
@@ -33,45 +90,64 @@
         <div class="slogan">
             <h2>안녕하세요 <br>저희는 모두 I(내향형)와 T(사고형)로 이루어진 팀,<br>IT팀입니다.</h2>
         </div>
-    
-        <!--이미지-->
-        <div class="img_1">
-            <img width=100% class="info-photo"
-                src="https://i.namu.wiki/i/KELtOnV8bfxBqpktCQVuSm8FuxWxrY1Lc1BOHccMVXM3dFgXhfbf5EYs4-eS_BKps5-m866mR2WZwKpuSLUEL91unm8dxaIuLt7VTaeFOsVcPIssuLd3WO0y_n8G_u5X7fHU-twxIIyo86ZbxBVRIg.webp">
-        </div>
-    </div>
 
-    <!--컨테이너 2-->
-    <div class="container_2">
-        <div class="img_2">
-            <img width=100% class="info-photo"
-                src="https://www.fitpetmall.com/wp-content/uploads/2023/10/shutterstock_1275055966-1.png">
-        </div>
-        <div class="info-intro">
-            <div class="info_team">
-                <h3>IT팀은 어떠한 팀인가</h3>
-                IT팀은 모두 I(내향형)와 T(사고형)로 이루어진 팀입니다.
-                <br>조용하지만 깊이 있는 사고력으로 문제를 분석하고, 집중력을 발휘해 효율적이고 창의적인 솔루션을 만들어냅니다.
-                <br>IT(Information & Technology)라는 이름처럼 논리적이고 체계적인 접근으로 최고의 결과를 만들어내겠습니다
+        <script>
+            // 버튼 요소 가져오기
+            const moveButton = document.getElementById("homebtn");
+
+            // 버튼 클릭 이벤트 리스너 추가
+            moveButton.addEventListener("click", function () {
+                // 클릭 시 이동할 페이지 URL
+                window.location.href = "main.html"; // 이동할 URL로 변경
+            });
+
+
+
+            // 버튼 요소 가져오기
+            const openTabButton = document.getElementById("notionbtn");
+
+            // 버튼 클릭 시 새로운 탭 열기
+            openTabButton.addEventListener("click", function () {
+                // 새로운 탭을 열고 특정 URL을 로드
+                window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
+            });
+
+
+
+        </script>
+
+        <!--팀소개-->
+        <div class="info_container">
+            <div class="info_img">
+                <img width=100% class="info-photo"
+                    src="https://i.namu.wiki/i/KELtOnV8bfxBqpktCQVuSm8FuxWxrY1Lc1BOHccMVXM3dFgXhfbf5EYs4-eS_BKps5-m866mR2WZwKpuSLUEL91unm8dxaIuLt7VTaeFOsVcPIssuLd3WO0y_n8G_u5X7fHU-twxIIyo86ZbxBVRIg.webp">
             </div>
-            <div class="info_rg">
-                <div class="info_rule">
-                    <ul>
-                        <h3>우리들의 규칙</h3>
-                        <li> 1. 시간 약속을 철저히 지키겠습니다. </li>
-                        <li> 2. 소통을 중요시하며 자리 비움이나 문제가 생기면 빠르게 공유하겠습니다. </li>
-                        <li> 3. 실수나 문제가 있어도 남 탓하지말고 문제를 해결해나가는데 집중하겠습니다.</li>
-                        <li> 대화를 할 때는 캠도 켜고 화면공유도 잘 하겠습니다. </li>
-                    </ul>
+            <div class="info-intro">
+                <div class="info_team">
+                    <h3>IT팀은 어떠한 팀인가</h3>
+                    IT팀은 모두 I(내향형)와 T(사고형)로 이루어진 팀입니다.
+                    <br>조용하지만 깊이 있는 사고력으로 문제를 분석하고, 집중력을 발휘해 효율적이고 창의적인 솔루션을 만들어냅니다.
+                    <br>IT(Information & Technology)라는 이름처럼 논리적이고 체계적인 접근으로 최고의 결과를 만들어내겠습니다
                 </div>
-                <div class="info_goal">
-                    <ul>
-                        <h3>우리들의 목표</h3>
-                        <li> 1. 매일 일정 소화하기 </li>
-                        <li> 2. 부끄러워도 물어보기 </li>
-                        <li> 3. 이번 프로젝트 포트폴리오로 사용하기</li>
-                        <li> 4. TIL 남은날까지 맨날 쓰기 📝 </li>
-                    </ul>
+                <div class="info_rg">
+                    <div class="info_rule">
+                        <ul>
+                            <h3>우리들의 규칙</h3>
+                            <li> 1. 시간 약속을 철저히 지키겠습니다. </li>
+                            <li> 2. 소통을 중요시하며 자리 비움이나 문제가 생기면 빠르게 공유하겠습니다. </li>
+                            <li> 3. 실수나 문제가 있어도 남 탓하지말고 문제를 해결해나가는데 집중하겠습니다.</li>
+                            <li> 대화를 할 때는 캠도 켜고 화면공유도 잘 하겠습니다. </li>
+                        </ul>
+                    </div>
+                    <div class="info_goal">
+                        <ul>
+                            <h3>우리들의 목표</h3>
+                            <li> 1. 매일 일정 소화하기 </li>
+                            <li> 2. 부끄러워도 물어보기 </li>
+                            <li> 3. 이번 프로젝트 포트폴리오로 사용하기</li>
+                            <li> 4. TIL 남은날까지 맨날 쓰기 📝 </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,6 +227,7 @@
 
 
     <!--방명록 작성란-->
+
     <div class="comment_container">
         <div class="container">
             <div class="guestbook-title">방명록</div>
@@ -171,9 +248,10 @@
                     <tbody id="guestbookEntries"></tbody>
                 </table>
             </div>
+
         </div>
     </div>
-    <script>
+    <!-- <script>
         document.getElementById("submitButton").addEventListener("click", function () {
             const name = document.getElementById("nameInput").value.trim();
             const comment = document.getElementById("commentInput").value.trim();
@@ -184,6 +262,7 @@
 
                 const nameCell = newRow.insertCell(0);
                 nameCell.textContent = name;
+
 
                 const commentCell = newRow.insertCell(1);
                 commentCell.textContent = comment;
@@ -220,21 +299,6 @@
             }, 800); 
         });
     </script>
-
-<script>
-    // 버튼 요소 가져오기
-    const moveButton = document.getElementById("homebtn");
-
-    // 버튼 클릭 이벤트 리스너 추가
-    moveButton.addEventListener("click", function () {
-        // 클릭 시 이동할 페이지 URL
-        window.location.href = "main.html"; // 이동할 URL로 변경
-    });
-    document.getElementById("notionbtn").addEventListener("click", function () {
-        window.location.href = "https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491";
-    });
-</script>
-
 </body>
 
 </html>

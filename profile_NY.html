@@ -18,15 +18,29 @@
     <!--헤더부분-->
     <header class="header">
         <nav class="nav_home">
-            <button type="button" class="btn btn-outline-light">home</button>
+            <button id="homebtn" type="button" class="btn btn-outline-light">home</button>
         </nav>
+
         <nav>
             <h1>IT</h1>
         </nav>
         <nav class="nav_notion">
-            <button type="button" class="btn btn-outline-light">팀노션</button>
+            <button id="notionbtn" type="button" class="btn btn-outline-light">팀노션</button>
         </nav>
     </header>
+    <script>
+        // 버튼 요소 가져오기
+        const moveButton = document.getElementById("homebtn");
+
+        // 버튼 클릭 이벤트 리스너 추가
+        moveButton.addEventListener("click", function () {
+            // 클릭 시 이동할 페이지 URL
+            window.location.href = "main.html"; // 이동할 URL로 변경
+        });
+        document.getElementById("notionbtn").addEventListener("click", function () {
+            window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
+        });
+    </script>
     <div class="container">
         <div class="page-inner no-page-title">
             <div id="main-wrapper">
@@ -128,7 +142,7 @@
                                         data-bs-target="#imageModal">
                                     <div class="card-body">
                                         <h5 class="card-title">첫번째 취미</h5>
-                                        <p class="card-text">롤을 굉장히 좋아합니다!<br>칼바람밖에 안하고 그마저도 공부하느라 거의 못하고 있지만<br>주말에 같이 하실 분 환영합니다 ㅎㅎ
+                                        <p class="card-text">롤을 굉장히 좋아합니다!<br>칼바람밖에 안하고 그마저도 공부하느라 거의 못하고 있지만<br>주말에 같이 하실 분 환영합니다
                                         </p>
                                     </div>
                                 </div>
@@ -140,7 +154,7 @@
                                         data-bs-target="#imageModal">
                                     <div class="card-body">
                                         <h5 class="card-title">두번째 취미</h5>
-                                        <p class="card-text">맛집 탐방+술 마시기가 제 취미(?)입니다 먹는 낙으로 사는 사람으로써 웨이팅해서라도 맛집을 찾아다닙니당 그리고 맛있는 거 먹으면 술 생각나잖아요?!?!</p>
+                                        <p class="card-text">맛집 탐방+술 마시기가 제 취미입니다 먹는 낙으로 사는 사람으로서 웨이팅해서라도 맛집을 찾아다닙니다 그리고 맛있는 거 먹으면 술 생각이 나더라구요ㅎㅎ</p>
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +194,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">프로젝트 역할</h5>
-                                        <p class="card-text">프로젝트 역할 나는 뭐를 맡았다!</p>
+                                        <p class="card-text">저는 프로젝트에서 개인페이지 html, css 구현을 맡았습니다!</p>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +202,11 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">프로젝트 소감</h5>
-                                        <p class="card-text">프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감</p>
+                                        <p class="card-text">이전 팀 프로젝트에서 뜻하지 않게 풀스택 개발을 도맡아 한 적이 있었습니다.
+                                            저는 백엔드 개발을 희망해서 프론트엔드 지식이 없었고, 대부분 GPT의 도움을 받아 개발했었는데 
+                                            이번에 강의를 듣고 직접 프로젝트를 해보면서 그때 복붙했던 코드의 의미를 이해할 수 있었습니다.
+                                            속성 하나로 결과가 달라지고, 예상과 다른 결과에 당황한 적도 있었지만 수정 후 즉시 화면으로 결과를 확인할 수 있는 점이 프론트엔드의 매력이라고 느꼈습니다.
+                                            또 좋은 팀원분들을 만나서 이틀이라는 짧은 시간동안 뜻깊은 협업을 경험할 수 있었습니다! </p>
                                     </div>
                                 </div>
                             </div>
