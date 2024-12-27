@@ -10,8 +10,59 @@
     <link rel="Stylesheet" href="main.css">
 
     <!--스크롤 기능(만들 예정))-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module">
 
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+        // Firebase 구성 정보 설정
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyA3yuDMpTjrPHpMC45hjq8XgVbK3sl1rPI",
+            authDomain: "sparta-829cf.firebaseapp.com",
+            projectId: "sparta-829cf",
+            storageBucket: "sparta-829cf.firebasestorage.app",
+            messagingSenderId: "911031055174",
+            appId: "1:911031055174:web:37075355e525cf26aaeb47",
+            measurementId: "G-M0R0LLLFT8"
+        };
+
+
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        $("#submitButton").click(async function () {
+            let nameInput = $('#nameInput').val();
+            let commentInput = $('#commentInput').val();
+            
+
+            let doc = {
+                'nameInput': nameInput,
+                'commentInput': commentInput,
+            };
+            await addDoc(collection(db, "guestbookEntries"), doc);
+            alert('등록 완료!');
+            window.location.reload();
+        })
+
+        let docs = await getDocs(collection(db, "guestbookEntries"));
+        docs.forEach((doc) => {
+            let row = doc.data();
+            console.log(row);
+
+            let nameInput = row['nameInput'];
+            let commentInput = row['commentInput'];
+        });
+
+    </script>
 
 </head>
 
@@ -46,18 +97,18 @@
                 // 클릭 시 이동할 페이지 URL
                 window.location.href = "main.html"; // 이동할 URL로 변경
             });
-            
 
-            
-        // 버튼 요소 가져오기
-        const openTabButton = document.getElementById("notionbtn");
 
-        // 버튼 클릭 시 새로운 탭 열기
-        openTabButton.addEventListener("click", function() {
-            // 새로운 탭을 열고 특정 URL을 로드
-            window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
-        });
-   
+
+            // 버튼 요소 가져오기
+            const openTabButton = document.getElementById("notionbtn");
+
+            // 버튼 클릭 시 새로운 탭 열기
+            openTabButton.addEventListener("click", function () {
+                // 새로운 탭을 열고 특정 URL을 로드
+                window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
+            });
+
 
 
         </script>
@@ -176,22 +227,22 @@
         <div class="input-section">
             <input type="text" id="nameInput" placeholder="이름 입력">
             <textarea id="commentInput" placeholder="코멘트 입력"></textarea>
-            <button id="submitButton">등록하기</button>
+            <button id="submitButton" type="button">등록하기</button>
         </div>
         <div class="guestbook">
             <div class="divider"></div>
             <table>
-            <thead>
-                <tr>
-                    <th>이름</th>
-                    <th>코멘트</th>
-                </tr>
-            </thead>
+                <thead>
+                    <tr>
+                        <th>이름</th>
+                        <th>코멘트</th>
+                    </tr>
+                </thead>
                 <tbody id="guestbookEntries"></tbody>
             </table>
         </div>
     </div>
-    <script>
+    <!-- <script>
         document.getElementById("submitButton").addEventListener("click", function () {
         const name = document.getElementById("nameInput").value.trim(); 
         const comment = document.getElementById("commentInput").value.trim(); 
@@ -205,14 +256,14 @@
 
         const commentCell = newRow.insertCell(1);
         commentCell.textContent = comment;
-
+       
         document.getElementById("nameInput").value = "";
         document.getElementById("commentInput").value = "";
   } else {
         alert("이름과 코멘트를 모두 입력해주세요.");
   }
 });
-    </script>
+    </script> -->
 </body>
 
 </html>
