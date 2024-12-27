@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>개인페이지</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<link rel="stylesheet" href="profile.css">
+
+<body>
+    <!--헤더부분-->
+    <header class="header">
+        <nav class="nav_home">
+            <button type="button" class="btn btn-outline-light">home</button>
+        </nav>
+        <nav>
+            <h1>IT</h1>
+        </nav>
+        <nav class="nav_notion">
+            <button type="button" class="btn btn-outline-light">팀노션</button>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="page-inner no-page-title">
+            <div id="main-wrapper">
+                <div class="row">
+                    <div class="col-lg-5 col-xl-3">
+                        <div class="card card-white grid-margin">
+                            <!-- 프로필구역 -->
+                            <div class="card-body user-profile-card mb-0">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                    class="user-profile-image rounded-circle" alt="" />
+                                <!-- 1. 이름 -->
+                                <h2 class="h4 mt-4">이름</h2>
+                                <!-- 2. 생년월일 -->
+                                <p style="margin-bottom: 5px;">생년월일</p>
+                                <!-- 3. mbti -->
+                                <p>mbti</p>
+                            </div>
+                            <hr />
+                            <!-- 4. 이메일, 블로그, 깃허브 -->
+                            <div class="card-body mb-3">
+                                <span class="label label-success mb-2">
+                                    <img src="https://symbl-world.akamaized.net/i/webp/a8/f7517cd3ddae9302da76134c86748d.webp"
+                                        alt="Email">
+                                    이메일 주소
+                                </span>
+                                <a href="블로그 주소" class="label label-success mb-2 link-hover">
+                                    <img src="https://symbl-world.akamaized.net/i/webp/a8/f7517cd3ddae9302da76134c86748d.webp"
+                                        alt="Tistory">
+                                    블로그 주소
+                                </a>
+                                <a href="깃허브 주소" class="label label-success mb-2 link-hover">
+                                    <img src="https://symbl-world.akamaized.net/i/webp/a8/f7517cd3ddae9302da76134c86748d.webp"
+                                        alt="GitHub">
+                                    깃허브 주소
+                                </a>
+                            </div>
+                            <hr />
+                            <div class="card-heading clearfix mt-3">
+                                <h4 class="card-title">다른 팀원 보기</h4>
+                            </div>
+                            <div class="team-members mt-3">
+                                <a href="https://example.com/member1" class="team-member">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        alt="Member 1">
+                                </a>
+                                <a href="https://example.com/member2" class="team-member">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        alt="Member 2">
+                                </a>
+                                <a href="https://example.com/member3" class="team-member">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        alt="Member 3">
+                                </a>
+                            </div>
+                            <div style="margin-bottom: 30px;"></div>
+                        </div>
+                    </div>
+                    <!-- 배너 -->
+                    <div class="col-lg-9 col-xl-10">
+                        <div class="card card-white">
+                            <div class="card-body">
+                                <div class="banner">
+                                    <section>
+                                        <h1>안녕하세요! 김제인입니다 잘 부탁드려요👋</h1>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <!-- 5. 카드 소개 5장 이미지, 제목, 내용 변경해주세용-->
+                        <div class="row row-cols-1 row-cols-5 g-4 mt-3 card-intro">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        class="card-img-top" alt="Card 1" data-bs-toggle="modal"
+                                        data-bs-target="#imageModal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card Title 1</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        class="card-img-top" alt="Card 2" data-bs-toggle="modal"
+                                        data-bs-target="#imageModal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card Title 2</h5>
+                                        <p class="card-text">This content is a little bit longer than the first
+                                            card.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        class="card-img-top" alt="Card 3" data-bs-toggle="modal"
+                                        data-bs-target="#imageModal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card Title 3</h5>
+                                        <p class="card-text">This card has additional supporting text to give it
+                                            more
+                                            context.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        class="card-img-top" alt="Card 4" data-bs-toggle="modal"
+                                        data-bs-target="#imageModal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card Title 4</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                        class="card-img-top" alt="Card 3" data-bs-toggle="modal"
+                                        data-bs-target="#imageModal">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card Title 5</h5>
+                                        <p class="card-text">This card has additional supporting text to give it
+                                            more
+                                            context.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 이미지 크게보기 -->
+                            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img id="modalImage" src="" class="img-fluid" alt="Modal Image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row g-4 mt-3 project">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">프로젝트 역할</h5>
+                                        <!-- 6. 프로젝트 역할 -->
+                                        <p class="card-text">프로젝트 역할 나는 뭐를 맡았다!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">프로젝트 소감</h5>
+                                        <!-- 7. 프로젝트 소감 -->
+                                        <p class="card-text">프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // 카드의 이미지 클릭 시 해당 이미지를 모달에 표시
+            $(".card-img-top").click(function () {
+                var imgSrc = $(this).attr("src"); // 클릭한 이미지의 src 가져오기
+                $("#modalImage").attr("src", imgSrc); // 모달 이미지 업데이트
+                $('#imageModal').modal('show'); // 모달을 띄움
+            });
+        });
+    </script>
+</body>
+
+</html>
