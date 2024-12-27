@@ -134,7 +134,7 @@ ul {
 
 .comment_box {
 }
-
+/* CSS 방명록 */
 .container {
   width: 80%;
   margin: auto;
@@ -142,6 +142,8 @@ ul {
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .input-section {
