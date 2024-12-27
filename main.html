@@ -12,13 +12,14 @@
 </head>
 
 <body>
-    <div class="main_container">
+    <!--컨테이너 1-->
+    <div class="container_1">
         <!--헤더부분-->
         <header class="header">
             <nav class="nav_home">
                 <button id="homebtn" type="button" class="btn btn-outline-light">home</button>
             </nav>
-
+    
             <nav>
                 <h1>IT</h1>
             </nav>
@@ -26,69 +27,58 @@
                 <button id="notionbtn" type="button" class="btn btn-outline-light">팀노션</button>
             </nav>
         </header>
-
-
+    
+    
         <!--슬로건-->
         <div class="slogan">
             <h2>안녕하세요 <br>저희는 모두 I(내향형)와 T(사고형)로 이루어진 팀,<br>IT팀입니다.</h2>
         </div>
+    
+        <!--이미지-->
+        <div class="img_1">
+            <img width=100% class="info-photo"
+                src="https://i.namu.wiki/i/KELtOnV8bfxBqpktCQVuSm8FuxWxrY1Lc1BOHccMVXM3dFgXhfbf5EYs4-eS_BKps5-m866mR2WZwKpuSLUEL91unm8dxaIuLt7VTaeFOsVcPIssuLd3WO0y_n8G_u5X7fHU-twxIIyo86ZbxBVRIg.webp">
+        </div>
+    </div>
 
-        <script>
-            // 버튼 요소 가져오기
-            const moveButton = document.getElementById("homebtn");
-
-            // 버튼 클릭 이벤트 리스너 추가
-            moveButton.addEventListener("click", function () {
-                // 클릭 시 이동할 페이지 URL
-                window.location.href = "main.html"; // 이동할 URL로 변경
-            });
-            document.getElementById("notionbtn").addEventListener("click", function () {
-                window.location.href = "https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491";
-            });
-
-
-
-        </script>
-
-        <!--팀소개-->
-        <div class="info_container">
-            <div class="info_img">
-                <img width=100% class="info-photo"
-                    src="https://i.namu.wiki/i/KELtOnV8bfxBqpktCQVuSm8FuxWxrY1Lc1BOHccMVXM3dFgXhfbf5EYs4-eS_BKps5-m866mR2WZwKpuSLUEL91unm8dxaIuLt7VTaeFOsVcPIssuLd3WO0y_n8G_u5X7fHU-twxIIyo86ZbxBVRIg.webp">
+    <!--컨테이너 2-->
+    <div class="container_2">
+        <div class="img_2">
+            <img width=100% class="info-photo"
+                src="https://www.fitpetmall.com/wp-content/uploads/2023/10/shutterstock_1275055966-1.png">
+        </div>
+        <div class="info-intro">
+            <div class="info_team">
+                <h3>IT팀은 어떠한 팀인가</h3>
+                IT팀은 모두 I(내향형)와 T(사고형)로 이루어진 팀입니다.
+                <br>조용하지만 깊이 있는 사고력으로 문제를 분석하고, 집중력을 발휘해 효율적이고 창의적인 솔루션을 만들어냅니다.
+                <br>IT(Information & Technology)라는 이름처럼 논리적이고 체계적인 접근으로 최고의 결과를 만들어내겠습니다
             </div>
-            <div class="info-intro">
-                <div class="info_team">
-                    <h3>IT팀은 어떠한 팀인가</h3>
-                    IT팀은 모두 I(내향형)와 T(사고형)로 이루어진 팀입니다.
-                    <br>조용하지만 깊이 있는 사고력으로 문제를 분석하고, 집중력을 발휘해 효율적이고 창의적인 솔루션을 만들어냅니다.
-                    <br>IT(Information & Technology)라는 이름처럼 논리적이고 체계적인 접근으로 최고의 결과를 만들어내겠습니다
+            <div class="info_rg">
+                <div class="info_rule">
+                    <ul>
+                        <h3>우리들의 규칙</h3>
+                        <li> 1. 시간 약속을 철저히 지키겠습니다. </li>
+                        <li> 2. 소통을 중요시하며 자리 비움이나 문제가 생기면 빠르게 공유하겠습니다. </li>
+                        <li> 3. 실수나 문제가 있어도 남 탓하지말고 문제를 해결해나가는데 집중하겠습니다.</li>
+                        <li> 대화를 할 때는 캠도 켜고 화면공유도 잘 하겠습니다. </li>
+                    </ul>
                 </div>
-                <div class="info_rg">
-                    <div class="info_rule">
-                        <ul>
-                            <h3>우리들의 규칙</h3>
-                            <li> 1. 시간 약속을 철저히 지키겠습니다. </li>
-                            <li> 2. 소통을 중요시하며 자리 비움이나 문제가 생기면 빠르게 공유하겠습니다. </li>
-                            <li> 3. 실수나 문제가 있어도 남 탓하지말고 문제를 해결해나가는데 집중하겠습니다.</li>
-                            <li> 대화를 할 때는 캠도 켜고 화면공유도 잘 하겠습니다. </li>
-                        </ul>
-                    </div>
-                    <div class="info_goal">
-                        <ul>
-                            <h3>우리들의 목표</h3>
-                            <li> 1. 매일 일정 소화하기 </li>
-                            <li> 2. 부끄러워도 물어보기 </li>
-                            <li> 3. 이번 프로젝트 포트폴리오로 사용하기</li>
-                            <li> 4. TIL 남은날까지 맨날 쓰기 📝 </li>
-                        </ul>
-                    </div>
+                <div class="info_goal">
+                    <ul>
+                        <h3>우리들의 목표</h3>
+                        <li> 1. 매일 일정 소화하기 </li>
+                        <li> 2. 부끄러워도 물어보기 </li>
+                        <li> 3. 이번 프로젝트 포트폴리오로 사용하기</li>
+                        <li> 4. TIL 남은날까지 맨날 쓰기 📝 </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
     <!--자기소개 카드-->
-    <div class="card_container">
+    <div class="container_3">
         <div class="introduce_card">
             <div>
                 <h3>우리 팀원을 소개합니다</h3>
@@ -209,13 +199,10 @@
 
     <!--스크롤기능-->
     <script>
-        const containers = [
-            document.querySelector('.main_container'),
-            document.querySelector('.card_container'),
-            document.querySelector('.comment_container')
-        ];
+        const containers = document.querySelectorAll('.container_1, .container_2, .container_3');
         let currentIndex = 0;
-        let isScrolling = false; 
+        let isScrolling = false;
+
         window.addEventListener("wheel", (event) => {
             if (isScrolling) return;
             if (event.deltaY > 0) {
@@ -233,6 +220,21 @@
             }, 800); 
         });
     </script>
+
+<script>
+    // 버튼 요소 가져오기
+    const moveButton = document.getElementById("homebtn");
+
+    // 버튼 클릭 이벤트 리스너 추가
+    moveButton.addEventListener("click", function () {
+        // 클릭 시 이동할 페이지 URL
+        window.location.href = "main.html"; // 이동할 URL로 변경
+    });
+    document.getElementById("notionbtn").addEventListener("click", function () {
+        window.location.href = "https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491";
+    });
+</script>
+
 </body>
 
 </html>
