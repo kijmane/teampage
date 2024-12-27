@@ -37,8 +37,11 @@ h1 {
 }
 
 .user-profile-image {
-    width: 250px;
-    height: 250px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
 }
 
 .card.card-white {
@@ -75,6 +78,11 @@ h1 {
 .card img {
     width: 100%;
     height: auto;
+}
+
+.card-intro .card img {
+    height: 200px;
+    object-fit: cover;
 }
 
 .grid-margin {
