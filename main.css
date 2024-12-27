@@ -134,3 +134,84 @@ ul {
 
 .comment_box {
 }
+
+.container {
+  width: 80%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+.input-section input,
+.input-section textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.input-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #7acaf4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-section button:hover {
+  background-color: #028dff;
+}
+
+.guestbook {
+  max-height: 300px; 
+  margin: auto;
+  overflow-y: auto;
+  /* overflow-y: auto; */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.guestbook table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.guestbook-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.guestbook th,
+.guestbook td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  word-wrap: break-word;
+  word-break: break-word;
+  vertical-align: top;
+}
+
+.guestbook th:first-child,
+.guestbook td:first-child {
+  width: 30%;
+}
+
+.guestbook th:last-child,
+.guestbook td:last-child {
+  width: 70%;
+}
