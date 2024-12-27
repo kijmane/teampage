@@ -122,7 +122,27 @@
             </div>
         </div>
     </div>
-
+    <div class="container"> /* html 방명록 */
+        <div class="guestbook-title">방명록</div>
+        <div class="input-section">
+            <input type="text" id="nameInput" placeholder="이름 입력">
+            <textarea id="commentInput" placeholder="코멘트 입력"></textarea>
+            <button id="submitButton">등록하기</button>
+        </div>
+        <div class="guestbook">
+            <div class="divider"></div>
+            <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>코멘트</th>
+                </tr>
+            </thead>
+                <tbody id="guestbookEntries"></tbody>
+            </table>
+        </div>
+    </div>
+</div> /* html 방명록 */
     <script>
         document.getElementById("card1").addEventListener("click", function() {
       window.location.href = "profile.html";
