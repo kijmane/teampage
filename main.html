@@ -91,31 +91,6 @@
             <h2>안녕하세요 <br>저희는 모두 I(내향형)와 T(사고형)로 이루어진 팀,<br>IT팀입니다.</h2>
         </div>
 
-        <script>
-            // 버튼 요소 가져오기
-            const moveButton = document.getElementById("homebtn");
-
-            // 버튼 클릭 이벤트 리스너 추가
-            moveButton.addEventListener("click", function () {
-                // 클릭 시 이동할 페이지 URL
-                window.location.href = "main.html"; // 이동할 URL로 변경
-            });
-
-
-
-            // 버튼 요소 가져오기
-            const openTabButton = document.getElementById("notionbtn");
-
-            // 버튼 클릭 시 새로운 탭 열기
-            openTabButton.addEventListener("click", function () {
-                // 새로운 탭을 열고 특정 URL을 로드
-                window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
-            });
-
-
-
-        </script>
-
         <!--팀소개-->
         <div class="info_container">
             <div class="info_img">
@@ -251,7 +226,8 @@
 
         </div>
     </div>
-    <!-- <script>
+    
+    <script>
         document.getElementById("submitButton").addEventListener("click", function () {
             const name = document.getElementById("nameInput").value.trim();
             const comment = document.getElementById("commentInput").value.trim();
@@ -299,6 +275,31 @@
             }, 800); 
         });
     </script>
+
+
+    <script>
+        // 버튼 요소 가져오기
+        const moveButton = document.getElementById("homebtn");
+
+        // 버튼 클릭 이벤트 리스너 추가
+        moveButton.addEventListener("click", function () {
+            // 클릭 시 이동할 페이지 URL
+            window.location.href = "main.html"; // 이동할 URL로 변경
+        });
+
+
+
+        // 버튼 요소 가져오기
+        const openTabButton = document.getElementById("notionbtn");
+
+        // 버튼 클릭 시 새로운 탭 열기
+        openTabButton.addEventListener("click", function () {
+            // 새로운 탭을 열고 특정 URL을 로드
+            window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
+        });
+    </script>
+
+
 </body>
 
 </html>
