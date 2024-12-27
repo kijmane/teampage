@@ -46,10 +46,18 @@
                 // 클릭 시 이동할 페이지 URL
                 window.location.href = "main.html"; // 이동할 URL로 변경
             });
-            document.getElementById("notionbtn").addEventListener("click", function () {
-                window.location.href = "https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491";
-            });
+            
 
+            
+        // 버튼 요소 가져오기
+        const openTabButton = document.getElementById("notionbtn");
+
+        // 버튼 클릭 시 새로운 탭 열기
+        openTabButton.addEventListener("click", function() {
+            // 새로운 탭을 열고 특정 URL을 로드
+            window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
+        });
+   
 
 
         </script>
