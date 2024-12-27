@@ -167,6 +167,36 @@
             height: auto;
             border-radius: 10px;
         }
+
+        .project {
+            padding-top: 30px;
+            padding-bottom: 80px;
+        }
+
+        .banner {
+            padding-top: 30px;
+        }
+
+        section{
+        display: inline-block;
+        }
+
+        section>h1	{
+            color: #007bff;
+            font-size:70px;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0; /*넓이 값을 0 */
+            border-right: 0.5rem solid #b21697;
+            animation: typing steps(12, end) 2s forwards;
+        }
+        
+        /*애니메이션 키프레임 적용*/
+        @keyframes typing {
+            from{width:0 }
+            to{width: 100%}
+
+        }
     </style>
 
 </head>
@@ -242,9 +272,15 @@
                     <div class="col-lg-9 col-xl-10">
                         <div class="card card-white">
                             <div class="card-body">
-                                <img src="images/sample.png" alt="배너 이미지">
+                                <div class="banner">
+                                    <section>
+                                        <h1>안녕하세요! 김나연입니다 잘 부탁드려요👋</h1>
+                                    </section>
+                                </div>
+
                             </div>
                         </div>
+                        <hr />
                         <!-- 카드 소개 -->
                         <div class="row row-cols-1 row-cols-5 g-4 mt-3 card-intro">
                             <div class="col">
@@ -324,7 +360,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row g-4 mt-3">
+                        <hr />
+                        <div class="row g-4 mt-3 project">
                             <div class="col-md-4">
                                 <div class="card">
                                     <div class="card-body">
