@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -11,195 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Serif+KR:wght@200..900&display=swap');
-
-        * {
-            font-family: "Noto Serif KR", serif;
-            font-optical-sizing: auto;
-
-        }
-
-        .header {
-            background-color: rgba(72, 184, 245);
-            padding: 5px 0px 5px 0px;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        h1 {
-            color: white;
-            font-family: "Do Hyeon", serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        .nav_home {
-            margin-left: 15%;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: nowrap;
-        }
-
-        .nav_notion {
-            margin-right: 15%;
-        }
-
-        .user-profile-image {
-            width: 250px;
-            height: 250px;
-        }
-
-        .card.card-white {
-            border: none;
-        }
-
-        .link-hover {
-            color: black;
-            text-decoration: none;
-        }
-
-        .link-hover:hover {
-            color: #007bff;
-            text-decoration: underline;
-        }
-
-        .team-members {
-            display: flex;
-            gap: 15px;
-        }
-
-        .team-member img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ddd;
-        }
-
-        .team-member {
-            text-decoration: none;
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-
-        .grid-margin {
-            position: relative;
-            margin-top: 100px;
-            margin-right: 50px;
-            left: -60px;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-        }
-
-        .card-text {
-            font-size: 1rem;
-        }
-
-        .card-intro .card {
-            width: 100%;
-            height: 450px;
-        }
-
-        .card-intro {
-            background-color: #ddffff;
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .card-intro .card {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .card-intro .card:hover {
-            transform: scale(1.05);
-        }
-
-        .card-intro .card-body {
-            padding: 20px;
-        }
-
-        .mb-0 {
-            margin-bottom: 0;
-        }
-
-        .g-4>.col {
-            margin-bottom: 1.5rem;
-        }
-
-        .row-cols-1>.col {
-            flex: 0 0 auto;
-        }
-
-        .label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .label img {
-            width: 20px;
-            height: 20px;
-        }
-
-        .col-md-4 .card,
-        .col-md-8 .card {
-            height: 200px;
-        }
-
-        .modal-body {
-            text-align: center;
-        }
-
-        #modalImage {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .project {
-            padding-top: 30px;
-            padding-bottom: 80px;
-        }
-
-        .banner {
-            padding-top: 30px;
-        }
-
-        section{
-        display: inline-block;
-        }
-
-        section>h1	{
-            color: #007bff;
-            font-size:70px;
-            overflow: hidden;
-            white-space: nowrap;
-            width: 0; /*넓이 값을 0 */
-            border-right: 0.5rem solid #b21697;
-            animation: typing steps(12, end) 2s forwards;
-        }
-        
-        /*애니메이션 키프레임 적용*/
-        @keyframes typing {
-            from{width:0 }
-            to{width: 100%}
-
-        }
-    </style>
-
 </head>
+<link rel="stylesheet" href="profile.css">
 
 <body>
     <!--헤더부분-->
@@ -222,29 +35,32 @@
                         <div class="card card-white grid-margin">
                             <!-- 프로필구역 -->
                             <div class="card-body user-profile-card mb-0">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                    class="user-profile-image rounded-circle" alt="" />
-                                <h2 class="h4 mt-4">김나연</h2>
-                                <p style="margin-bottom: 5px;">2001.03.28</p>
-                                <p>ISTP</p>
+                                <img src="images/jane.jpg"
+                                    class="user-profile-image rounded-circle" alt="김제인" />
+                                <!-- 1. 이름 -->
+                                <h2 class="h4 mt-4">김제인</h2>
+                                <!-- 2. 생년월일 -->
+                                <p style="margin-bottom: 5px;">2003.1.24</p>
+                                <!-- 3. mbti -->
+                                <p>INTJ</p>
                             </div>
                             <hr />
-                            <!-- 이메일 링크 구역 -->
+                            <!-- 4. 이메일, 블로그, 깃허브 -->
                             <div class="card-body mb-3">
                                 <span class="label label-success mb-2">
                                     <img src="https://symbl-world.akamaized.net/i/webp/a8/f7517cd3ddae9302da76134c86748d.webp"
                                         alt="Email">
-                                    kny5579@naver.com
+                                    kj5592305@gmail.com
                                 </span>
-                                <a href="https://kny5579.tistory.com/" class="label label-success mb-2 link-hover">
+                                <a href="https://kimjanexxx.blogspot.com" class="label label-success mb-2 link-hover">
                                     <img src="https://symbl-world.akamaized.net/i/webp/a8/f7517cd3ddae9302da76134c86748d.webp"
                                         alt="Tistory">
-                                    https://kny5579.tistory.com/
+                                    kimjanexxx.blogspot.com
                                 </a>
-                                <a href="https://github.com/kny5579" class="label label-success mb-2 link-hover">
+                                <a href="https://github.com/djijdsj" class="label label-success mb-2 link-hover">
                                     <img src="https://symbl-world.akamaized.net/i/webp/a8/f7517cd3ddae9302da76134c86748d.webp"
                                         alt="GitHub">
-                                    https://github.com/kny5579
+                                   https://github.com/djijdsj
                                 </a>
                             </div>
                             <hr />
@@ -274,50 +90,45 @@
                             <div class="card-body">
                                 <div class="banner">
                                     <section>
-                                        <h1>안녕하세요! 김나연입니다 잘 부탁드려요👋</h1>
+                                        <h1>안녕하세요! 김제인입니다. 잘 부탁드려요☺️</h1>
                                     </section>
                                 </div>
-
                             </div>
                         </div>
                         <hr />
-                        <!-- 카드 소개 -->
+                        <!-- 5. 카드 소개 5장 이미지, 제목, 내용 변경해주세용-->
                         <div class="row row-cols-1 row-cols-5 g-4 mt-3 card-intro">
                             <div class="col">
                                 <div class="card">
-                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                    <img src="images/jane2.jpg"
                                         class="card-img-top" alt="Card 1" data-bs-toggle="modal"
                                         data-bs-target="#imageModal">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card Title 1</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a
-                                            natural lead-in to additional content.</p>
+                                        <h5 class="card-title">좋아하는 음식</h5>
+                                        <p class="card-text">집 근처에 연어덮밥 식당이 있어서 30번 넘게 갈 정도로 연어덮밥을 가장 좋아합니다!</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card">
-                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                    <img src="images/jane1.jpg"
                                         class="card-img-top" alt="Card 2" data-bs-toggle="modal"
                                         data-bs-target="#imageModal">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card Title 2</h5>
-                                        <p class="card-text">This content is a little bit longer than the first
-                                            card.
+                                        <h5 class="card-title">취미 생활</h5>
+                                        <p class="card-text">제 취미는 필라테스,산책입니다!
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card">
-                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                    <img src="images/jane3.jpg"
                                         class="card-img-top" alt="Card 3" data-bs-toggle="modal"
                                         data-bs-target="#imageModal">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card Title 3</h5>
-                                        <p class="card-text">This card has additional supporting text to give it
-                                            more
-                                            context.</p>
+                                        <h5 class="card-title">좋아하는 음악</h5>
+                                        <p class="card-text">ryuichi sakamoto - merry christmas, mr. lawrence</p>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +138,7 @@
                                         class="card-img-top" alt="Card 4" data-bs-toggle="modal"
                                         data-bs-target="#imageModal">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card Title 4</h5>
+                                        <h5 class="card-title"></h5>
                                         <p class="card-text">This is a longer card with supporting text below as a
                                             natural lead-in to additional content.</p>
                                     </div>
@@ -347,11 +158,13 @@
                                 </div>
                             </div>
                             <!-- 이미지 크게보기 -->
-                            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+                                aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <img id="modalImage" src="" class="img-fluid" alt="Modal Image">
@@ -366,7 +179,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">프로젝트 역할</h5>
-                                        <p class="card-text">프로젝트 역할 나는 뭐를 맡았다!</p>
+                                        <!-- 6. 프로젝트 역할 -->
+                                        <p class="card-text">방명록 페이지 구성 역할을 맡았습니다!</p>
                                     </div>
                                 </div>
                             </div>
@@ -374,7 +188,9 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">프로젝트 소감</h5>
-                                        <p class="card-text">프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감 프로젝트 소감</p>
+                                        <!-- 7. 프로젝트 소감 -->
+                                        <p class="card-text">새로운 프로젝트 경험을 통해 팀원들과 협업의 경험도 만들 수 있었고 뜻깊은 기회였습니다.<br>
+                                                             문제 해결 능력을 키울 수 있었고 더욱 더 성장해야겠다는 마음가짐을 갖게되었습니다.</p>
                                     </div>
                                 </div>
                             </div>

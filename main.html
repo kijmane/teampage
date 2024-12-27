@@ -9,6 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="Stylesheet" href="main.css">
 
+
     <!--스크롤 기능(만들 예정))-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module">
@@ -63,6 +64,7 @@
         });
 
     </script>
+
 
 </head>
 
@@ -221,49 +223,85 @@
         });
     </script>
 
+
+
     <!--방명록 작성란-->
-    <div class="container">
-        <div class="guestbook-title">방명록</div>
-        <div class="input-section">
-            <input type="text" id="nameInput" placeholder="이름 입력">
-            <textarea id="commentInput" placeholder="코멘트 입력"></textarea>
-            <button id="submitButton" type="button">등록하기</button>
-        </div>
-        <div class="guestbook">
-            <div class="divider"></div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>이름</th>
-                        <th>코멘트</th>
-                    </tr>
-                </thead>
-                <tbody id="guestbookEntries"></tbody>
-            </table>
+
+    <div class="comment_container">
+        <div class="container">
+            <div class="guestbook-title">방명록</div>
+            <div class="input-section">
+                <input type="text" id="nameInput" placeholder="이름 입력">
+                <textarea id="commentInput" placeholder="코멘트 입력"></textarea>
+                <button id="submitButton">등록하기</button>
+            </div>
+            <div class="guestbook">
+                <div class="divider"></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>코멘트</th>
+                        </tr>
+                    </thead>
+                    <tbody id="guestbookEntries"></tbody>
+                </table>
+            </div>
+
         </div>
     </div>
     <!-- <script>
         document.getElementById("submitButton").addEventListener("click", function () {
-        const name = document.getElementById("nameInput").value.trim(); 
-        const comment = document.getElementById("commentInput").value.trim(); 
-        if (name && comment) {
-        const tableBody = document.getElementById("guestbookEntries");
+            const name = document.getElementById("nameInput").value.trim();
+            const comment = document.getElementById("commentInput").value.trim();
+            if (name && comment) {
+                const tableBody = document.getElementById("guestbookEntries");
 
-        const newRow = tableBody.insertRow();
+                const newRow = tableBody.insertRow();
 
-        const nameCell = newRow.insertCell(0);
-        nameCell.textContent = name;
+                const nameCell = newRow.insertCell(0);
+                nameCell.textContent = name;
 
-        const commentCell = newRow.insertCell(1);
-        commentCell.textContent = comment;
-       
-        document.getElementById("nameInput").value = "";
-        document.getElementById("commentInput").value = "";
-  } else {
-        alert("이름과 코멘트를 모두 입력해주세요.");
-  }
-});
-    </script> -->
+
+                const commentCell = newRow.insertCell(1);
+                commentCell.textContent = comment;
+
+                document.getElementById("nameInput").value = "";
+                document.getElementById("commentInput").value = "";
+            } else {
+                alert("이름과 코멘트를 모두 입력해주세요.");
+            }
+        });
+    </script>
+
+
+    <!--스크롤기능-->
+    <script>
+        const containers = [
+            document.querySelector('.main_container'),
+            document.querySelector('.card_container'),
+            document.querySelector('.comment_container')
+        ];
+        let currentIndex = 0;
+        let isScrolling = false; 
+        window.addEventListener("wheel", (event) => {
+            if (isScrolling) return;
+            if (event.deltaY > 0) {
+                currentIndex = Math.min(currentIndex + 1, containers.length - 1);
+            } else {
+                currentIndex = Math.max(currentIndex - 1, 0);
+            }
+            isScrolling = true;
+            containers[currentIndex].scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+            setTimeout(() => {
+                isScrolling = false;
+            }, 800); 
+        });
+    </script>
+
 </body>
 
 </html>
