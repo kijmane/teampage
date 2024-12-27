@@ -18,15 +18,29 @@
     <!--헤더부분-->
     <header class="header">
         <nav class="nav_home">
-            <button type="button" class="btn btn-outline-light">home</button>
+            <button id="homebtn" type="button" class="btn btn-outline-light">home</button>
         </nav>
+
         <nav>
             <h1>IT</h1>
         </nav>
         <nav class="nav_notion">
-            <button type="button" class="btn btn-outline-light">팀노션</button>
+            <button id="notionbtn" type="button" class="btn btn-outline-light">팀노션</button>
         </nav>
     </header>
+    <script>
+        // 버튼 요소 가져오기
+        const moveButton = document.getElementById("homebtn");
+
+        // 버튼 클릭 이벤트 리스너 추가
+        moveButton.addEventListener("click", function () {
+            // 클릭 시 이동할 페이지 URL
+            window.location.href = "main.html"; // 이동할 URL로 변경
+        });
+        document.getElementById("notionbtn").addEventListener("click", function () {
+            window.open("https://teamsparta.notion.site/20-b8bb700640da4d20a62e66efebe24491", "_blank");
+        });
+    </script>
     <div class="container">
         <div class="page-inner no-page-title">
             <div id="main-wrapper">
@@ -68,15 +82,15 @@
                                 <h4 class="card-title">다른 팀원 보기</h4>
                             </div>
                             <div class="team-members mt-3">
-                                <a href="https://example.com/member1" class="team-member">
-                                    <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
+                                <a href="profile_NY.html" class="team-member">
+                                    <img src="images/nayeon_profile.jpg"
                                         alt="Member 1">
                                 </a>
-                                <a href="https://example.com/member2" class="team-member">
+                                <a href="profile_SY.html" class="team-member">
                                     <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
                                         alt="Member 2">
                                 </a>
-                                <a href="https://example.com/member3" class="team-member">
+                                <a href="profile_HS.html" class="team-member">
                                     <img src="https://blog.label.kr/wp-content/uploads/2021/03/20210401_pastelColorLabel-02.jpg"
                                         alt="Member 3">
                                 </a>
