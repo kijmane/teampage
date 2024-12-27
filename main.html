@@ -38,11 +38,11 @@
         // Firebase 인스턴스 초기화
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-        
+
         $("#submitButton").click(async function () {
             let nameInput = $('#nameInput').val();
             let commentInput = $('#commentInput').val();
-            
+
 
             let doc = {
                 'nameInput': nameInput,
@@ -50,7 +50,7 @@
             };
             await addDoc(collection(db, "guestbookEntries"), doc);
             alert('등록 완료!');
-            
+
         })
 
         let docs = await getDocs(collection(db, "guestbookEntries"));
@@ -75,7 +75,7 @@
             <nav class="nav_home">
                 <button id="homebtn" type="button" class="btn btn-outline-light">home</button>
             </nav>
-    
+
             <nav>
                 <h1>IT</h1>
             </nav>
@@ -280,7 +280,7 @@
             });
             setTimeout(() => {
                 isScrolling = false;
-            }, 800); 
+            }, 800);
         });
     </script>
 
