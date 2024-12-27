@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Serif+KR:wght@200..900&display=swap');
+
+* {
+    font-family: "Noto Serif KR", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+h1,h2,h3 {
+    font-family: "Do Hyeon", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main_container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out; /* 스크롤 전환 효과 */
+}
+
+.header {
+    background-color: rgba(72, 184, 245);
+    padding: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+}
+
+.nav_home {
+    margin-left: 15%;
+}
+
+.nav_notion {
+    margin-right: 15%;
+}
+.slogan {
+    padding: 15vh 15% 15vh 15%;
+}
+ul {
+    list-style: none;
+}
+
+/*컨테이너 영역-*/
+
+.info_container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex: 1;
+    justify-content: space-between;
+    align-items: stretch;
+    padding : 20px;
+    background-color: rgba(72, 184, 245);
+}
+
+.info_img{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-photo{
+    width: 100%;
+    height: auto;
+    border-radius: 10px; 
+    object-fit: cover;
+}
+
+.info_intro{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info_team{
+    padding: 20px;
+}
+
+.info_rg {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.info_rule, .info_goal {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 60px;
+}
+
+
+/*소개 카드 영역*/
+.card_container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    transition: transform 0.5s ease-in-out; /* 스크롤 전환 효과 */
+}
+
+.introduce_card {
+    padding: 10%
+}
+
+.comment_container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    transition: transform 0.5s ease-in-out; /* 스크롤 전환 효과 */
+}
+
+.comment_box {
+}

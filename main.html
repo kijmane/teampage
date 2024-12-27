@@ -7,202 +7,116 @@
     <title>(가제)소개페이지</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Serif+KR:wght@200..900&display=swap');
+    <link rel="Stylesheet" href="main.css"> 
 
-        * {
-            font-family: "Noto Serif KR", serif;
-            font-optical-sizing: auto;
-            font-weight: <weight>;
-            font-style: normal;
-        }
+    <!--스크롤 기능(만들 예정))-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        h1,
-        h2,
-        h3 {
-            font-family: "Do Hyeon", serif;
-            font-weight: 400;
-            font-style: normal;
-        }
 
-        .header {
-            background-color: rgba(72, 184, 245);
-            padding: 5px 0px 5px 0px;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        h1 {
-            color: white;
-        }
-
-        .nav_home {
-            margin-left: 15%;
-        }
-
-        .nav_notion {
-            margin-right: 15%;
-        }
-
-        .slogan {
-            margin: 80px 15% 80px 15%;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .info_team_1 {
-            height: fit-content;
-            background-color: rgba(72, 184, 245);
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .info_team_2 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 5%;
-            margin-right: 14%;
-        }
-
-        .info_team_3 {
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-            align-items: flex-start;
-            padding: 20px;
-
-        }
-
-        .info_img{
-            margin-left: 5%;
-        }
-
-        .info_mean {
-            padding-bottom: 20px;
-        }
-
-        .info_rule, .info_goal {
-            width: 50%;
-        }
-
-        .introduce_card {
-            margin: 15%;
-            background-color: palevioletred;
-            padding: 30px;
-        }
-
-        .comment_box {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: top;
-            background-color: green;
-            padding-top: 50px;
-            height: 600px;
-        }
-    </style>
 </head>
 
 <body>
-    <!--헤더부분-->
-    <header class="header">
-        <nav class="nav_home">
-            <button type="button" class="btn btn-outline-light">home</button>
-        </nav>
-        <nav>
-            <h1>IT</h1>
-        </nav>
-        <nav class="nav_notion">
-            <button type="button" class="btn btn-outline-light">팀노션</button>
-        </nav>
-    </header>
-
-    <!--슬로건-->
-    <div class="slogan">
-        <h2>안녕하세요 <br>저희는 모두 I(내향형)와 T(사고형)로 이루어진 팀, IT팀입니다.</h2>
-    </div>
-
-    <!--팀소개-->
-    <div class="info_team_1">
-        <div class="info_img">
-            <img width=100% src="https://i.namu.wiki/i/KELtOnV8bfxBqpktCQVuSm8FuxWxrY1Lc1BOHccMVXM3dFgXhfbf5EYs4-eS_BKps5-m866mR2WZwKpuSLUEL91unm8dxaIuLt7VTaeFOsVcPIssuLd3WO0y_n8G_u5X7fHU-twxIIyo86ZbxBVRIg.webp">
+    <div class="main_container">
+        <!--헤더부분-->
+        <header class="header">
+            <nav class="nav_home">
+                <button type="button" class="btn btn-outline-light">home</button>
+            </nav>
+            <nav>
+                <h1>IT</h1>
+            </nav>
+            <nav class="nav_notion">
+                <button type="button" class="btn btn-outline-light">팀노션</button>
+            </nav>
+        </header>
+    
+        <!--슬로건-->
+        <div class="slogan">
+            <h2>안녕하세요 <br>저희는 모두 I(내향형)와 T(사고형)로 이루어진 팀,<br>IT팀입니다.</h2>
         </div>
-        <div class="info_team_2">
-            <div class="info_mean">
-                <h3>IT팀은 어떠한 팀인가</h3>
-                IT팀은 모두 I(내향형)와 T(사고형)로 이루어진 팀입니다.
-                조용하지만 깊이 있는 사고력으로 문제를 분석하고, 집중력을 발휘해 효율적이고 창의적인 솔루션을 만들어냅니다.
-                IT(Information & Technology)라는 이름처럼 논리적이고 체계적인 접근으로 최고의 결과를 만들어내겠습니다
+    
+        <!--팀소개-->
+        <div class="info_container">
+            <div class="info_img">
+                <img width=100% class="info-photo"
+                    src="https://i.namu.wiki/i/KELtOnV8bfxBqpktCQVuSm8FuxWxrY1Lc1BOHccMVXM3dFgXhfbf5EYs4-eS_BKps5-m866mR2WZwKpuSLUEL91unm8dxaIuLt7VTaeFOsVcPIssuLd3WO0y_n8G_u5X7fHU-twxIIyo86ZbxBVRIg.webp">
             </div>
-            <div class="info_team_3">
-                <ul class="info_goal">
-                    <h3>우리들의 목표</h3>
-                    <li> 1. 매일 일정 소화하기 </li>
-                    <li> 2. 부끄러워도 물어보기 </li>
-                    <li> 3. 이번 프로젝트 포트폴리오로 사용하기</li>
-                    <li> 4. TIL 남은날까지 맨날 쓰기 📝 </li>
-                </ul>
-                <ul class="info_rule">
-                    <h3>우리들의 규칙</h3>
-                    <li> 1. 시간 약속을 철저히 지키겠습니다. </li>
-                    <li> 2. 소통을 중요시하며 자리 비움이나 문제가 생기면 빠르게 공유하겠습니다. </li>
-                    <li> 3. 실수나 문제가 있어도 남 탓하지말고 문제를 해결해나가는데 집중하겠습니다.</li>
-                    <li> 대화를 할 때는 캠도 켜고 화면공유도 잘 하겠습니다. </li>
-                </ul>
+            <div class="info-intro">
+                <div class="info_team">
+                    <h3>IT팀은 어떠한 팀인가</h3>
+                    IT팀은 모두 I(내향형)와 T(사고형)로 이루어진 팀입니다.
+                    <br>조용하지만 깊이 있는 사고력으로 문제를 분석하고, 집중력을 발휘해 효율적이고 창의적인 솔루션을 만들어냅니다.
+                    <br>IT(Information & Technology)라는 이름처럼 논리적이고 체계적인 접근으로 최고의 결과를 만들어내겠습니다
+                </div>
+                <div class="info_rg">
+                    <div class="info_rule">
+                        <ul>
+                            <h3>우리들의 규칙</h3>
+                            <li> 1. 시간 약속을 철저히 지키겠습니다. </li>
+                            <li> 2. 소통을 중요시하며 자리 비움이나 문제가 생기면 빠르게 공유하겠습니다. </li>
+                            <li> 3. 실수나 문제가 있어도 남 탓하지말고 문제를 해결해나가는데 집중하겠습니다.</li>
+                            <li> 대화를 할 때는 캠도 켜고 화면공유도 잘 하겠습니다. </li>
+                        </ul>
+                    </div>
+                    <div class="info_goal">
+                        <ul>
+                            <h3>우리들의 목표</h3>
+                            <li> 1. 매일 일정 소화하기 </li>
+                            <li> 2. 부끄러워도 물어보기 </li>
+                            <li> 3. 이번 프로젝트 포트폴리오로 사용하기</li>
+                            <li> 4. TIL 남은날까지 맨날 쓰기 📝 </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!--자기소개 카드-->
-    <div class="introduce_card" >
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card" id="card1">
-                    <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">카리나</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+    <div class="card_container">
+        <div class="introduce_card">
+            <div>
+                <h3>우리 팀원을 소개합니다</h3>
+            </div>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card" id="card1">
+                        <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">카리나</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card" id="card2">
-                    <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">카리나</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+                <div class="col">
+                    <div class="card" id="card2">
+                        <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">카리나</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card" id="card3">
-                    <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">카리나</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+                <div class="col">
+                    <div class="card" id="card3">
+                        <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">카리나</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card" id="card4">
-                    <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">카리나</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
+                <div class="col">
+                    <div class="card" id="card4">
+                        <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">카리나</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -227,23 +141,22 @@
     </script>
 
     <!--코멘트 작성란-->
-    <div class="comment">
-        <div class="comment_box">
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="name" placeholder="이름을 입력하세요">
-                <label for="floatingInput">이름</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="comment" placeholder="코멘트를 입력하세요">
-                <label for="floatingInput">코멘트</label>
-            </div>
-            <div class="mybtn">
-                <button id="postingbtn" type="button" class="btn btn-danger">등록하기</button>
+    <div class="comment_container">
+        <div class="comment">
+            <div class="comment_box">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="name" placeholder="이름을 입력하세요">
+                    <label for="floatingInput">이름</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="comment" placeholder="코멘트를 입력하세요">
+                    <label for="floatingInput">코멘트</label>
+                </div>
+                <div class="mybtn">
+                    <button id="postingbtn" type="button" class="btn btn-danger">등록하기</button>
+                </div>
             </div>
         </div>
-
-
-
     </div>
 
 </body>
