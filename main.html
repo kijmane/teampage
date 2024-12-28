@@ -43,11 +43,11 @@
             let nameInput = $('#nameInput').val();
             let commentInput = $('#commentInput').val();
 
-
             let doc = {
                 'nameInput': nameInput,
                 'commentInput': commentInput,
             };
+
             await addDoc(collection(db, "guestbookEntries"), doc);
             alert('등록 완료!');
 
@@ -56,10 +56,20 @@
         let docs = await getDocs(collection(db, "guestbookEntries"));
         docs.forEach((doc) => {
             let row = doc.data();
-            console.log(row);
-
             let nameInput = row['nameInput'];
             let commentInput = row['commentInput'];
+
+            if(nameInput !=="" && commentInput !==""){
+                let temp_html = `
+                <tbody id="guestbookEntries">
+                    <tr>
+                        <td>${nameInput}</td>
+                        <td>${commentInput}</td>
+                        </tr>
+                    </tbody>
+                `;
+                $('#guestbookEntries').append(temp_html);
+            }
         });
 
     </script>
@@ -212,7 +222,7 @@
             <div class="input-section">
                 <input type="text" id="nameInput" placeholder="이름 입력">
                 <textarea id="commentInput" placeholder="코멘트 입력"></textarea>
-                <input type="password" id="passwordInput" placeholder="비밀번호 입력">
+<!--                <input type="password" id="passwordInput" placeholder="비밀번호 입력">-->
                 <button id="submitButton">등록하기</button>
             </div>
             <div class="guestbook">
@@ -222,10 +232,10 @@
                         <tr>
                             <th>이름</th>
                             <th>코멘트</th>
-                            <th>등록일</th>
-                            <th>수정일</th>
-                            <th>수정</th>
-                            <th>삭제</th>
+<!--                            <th>등록일</th>-->
+<!--                            <th>수정일</th>-->
+<!--                            <th>수정</th>-->
+<!--                            <th>삭제</th>-->
                             </tr>
                     </thead>
                     <tbody id="guestbookEntries"></tbody>
@@ -235,29 +245,29 @@
         </div>
     </div>
     
-    <script>
-        document.getElementById("submitButton").addEventListener("click", function () {
-            const name = document.getElementById("nameInput").value.trim();
-            const comment = document.getElementById("commentInput").value.trim();
-            if (name && comment) {
-                const tableBody = document.getElementById("guestbookEntries");
+<!--    <script>-->
+<!--        document.getElementById("submitButton").addEventListener("click", function () {-->
+<!--            const name = document.getElementById("nameInput").value.trim();-->
+<!--            const comment = document.getElementById("commentInput").value.trim();-->
+<!--            if (name && comment) {-->
+<!--                const tableBody = document.getElementById("guestbookEntries");-->
 
-                const newRow = tableBody.insertRow();
+<!--                const newRow = tableBody.insertRow();-->
 
-                const nameCell = newRow.insertCell(0);
-                nameCell.textContent = name;
+<!--                const nameCell = newRow.insertCell(0);-->
+<!--                nameCell.textContent = name;-->
 
 
-                const commentCell = newRow.insertCell(1);
-                commentCell.textContent = comment;
+<!--                const commentCell = newRow.insertCell(1);-->
+<!--                commentCell.textContent = comment;-->
 
-                document.getElementById("nameInput").value = "";
-                document.getElementById("commentInput").value = "";
-            } else {
-                alert("이름과 코멘트를 모두 입력해주세요.");
-            }
-        });
-    </script>
+<!--                document.getElementById("nameInput").value = "";-->
+<!--                document.getElementById("commentInput").value = "";-->
+<!--            } else {-->
+<!--                alert("이름과 코멘트를 모두 입력해주세요.");-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
 
 
     <!--스크롤기능-->
