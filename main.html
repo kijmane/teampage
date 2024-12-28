@@ -36,42 +36,63 @@
 
 
         // Firebase 인스턴스 초기화
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+        // Firebase 인스턴스 초기화
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-        $("#submitButton").click(async function () {
-            let nameInput = $('#nameInput').val();
-            let commentInput = $('#commentInput').val();
+// "등록하기" 버튼 클릭 시
+$("#submitButton").click(async function () {
+    let nameInput = $('#nameInput').val();
+    let commentInput = $('#commentInput').val();
 
-            let doc = {
-                'nameInput': nameInput,
-                'commentInput': commentInput,
-            };
+    if (nameInput && commentInput) {
+        // 데이터 Firestore에 추가
+        let doc = {
+            'nameInput': nameInput,
+            'commentInput': commentInput,
+        };
 
-            await addDoc(collection(db, "guestbookEntries"), doc);
-            alert('등록 완료!');
+        await addDoc(collection(db, "guestbookEntries"), doc);
+        alert('등록 완료!');
 
-        })
+        // 입력 필드 비우기
+        $('#nameInput').val('');
+        $('#commentInput').val('');
 
-        let docs = await getDocs(collection(db, "guestbookEntries"));
-        docs.forEach((doc) => {
-            let row = doc.data();
-            let nameInput = row['nameInput'];
-            let commentInput = row['commentInput'];
+        // 방명록 업데이트
+        loadGuestbookEntries();
+    } else {
+        alert("이름과 코멘트를 모두 입력하세요.");
+    }
+});
 
-            if(nameInput !=="" && commentInput !==""){
-                let temp_html = `
-                <tbody id="guestbookEntries">
-                    <tr>
-                        <td>${nameInput}</td>
-                        <td>${commentInput}</td>
-                        </tr>
-                    </tbody>
-                `;
-                $('#guestbookEntries').append(temp_html);
-            }
-        });
+// 방명록 항목 불러오기
+async function loadGuestbookEntries() {
+    // 기존 방명록 데이터 지우기
+    $('#guestbookEntries').empty();
 
+    // Firestore에서 방명록 데이터 가져오기
+    let docs = await getDocs(collection(db, "guestbookEntries"));
+    docs.forEach((doc) => {
+        let row = doc.data();
+        let nameInput = row['nameInput'];
+        let commentInput = row['commentInput'];
+
+        // 데이터가 유효한 경우 테이블에 추가
+        if (nameInput !== "" && commentInput !== "") {
+            let temp_html = `
+                <tr>
+                    <td>${nameInput}</td>
+                    <td>${commentInput}</td>
+                </tr>
+            `;
+            $('#guestbookEntries').append(temp_html);
+        }
+    });
+}
+
+// 페이지 로딩 시 방명록 항목 불러오기
+loadGuestbookEntries();
     </script>
 
 
@@ -164,9 +185,7 @@
                         <img src="https://api.nudge-community.com/attachments/7406072" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">김제인</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to
-                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text">INTJ</p>
                         </div>
                     </div>
                 </div>
@@ -222,10 +241,6 @@
             <div class="input-section">
                 <input type="text" id="nameInput" placeholder="이름 입력">
                 <textarea id="commentInput" placeholder="코멘트 입력"></textarea>
-<<<<<<< HEAD
-=======
-<!--                <input type="password" id="passwordInput" placeholder="비밀번호 입력">-->
->>>>>>> 61516ce3709ea478d702e1218a1da2d75db78275
                 <button id="submitButton">등록하기</button>
             </div>
             <div class="guestbook">
@@ -235,13 +250,6 @@
                         <tr>
                             <th>이름</th>
                             <th>코멘트</th>
-<<<<<<< HEAD
-=======
-<!--                            <th>등록일</th>-->
-<!--                            <th>수정일</th>-->
-<!--                            <th>수정</th>-->
-<!--                            <th>삭제</th>-->
->>>>>>> 61516ce3709ea478d702e1218a1da2d75db78275
                             </tr>
                     </thead>
                     <tbody id="guestbookEntries"></tbody>
