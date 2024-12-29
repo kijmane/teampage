@@ -236,6 +236,7 @@ h1 {
 
 .input-section {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .input-section input,
@@ -267,9 +268,9 @@ h1 {
 .guestbook {
   max-height: 300px; 
   margin: auto;
-  overflow-y: auto;
   border: 1px solid #ddd;
   border-radius: 5px;
+  overflow-y: auto;
 }
 
 .guestbook table {
