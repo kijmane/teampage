@@ -32,36 +32,74 @@
             appId: "1:911031055174:web:37075355e525cf26aaeb47",
             measurementId: "G-M0R0LLLFT8"
         };
-
-
-
         // Firebase 인스턴스 초기화
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         
-        $("#submitButton").click(async function () {
-            let nameInput = $('#nameInput').val();
-            let commentInput = $('#commentInput').val();
-            
+// "등록하기" 버튼 클릭 시
+$("#submitButton").click(async function () {
+    let nameInput = $('#nameInput').val();
+    let commentInput = $('#commentInput').val();
 
-            let doc = {
-                'nameInput': nameInput,
-                'commentInput': commentInput,
-            };
-            await addDoc(collection(db, "guestbookEntries"), doc);
-            alert('등록 완료!');
-            window.location.reload();
-        })
+    if (nameInput && commentInput) {
+        // 데이터 Firestore에 추가
+        let doc = {
+            'nameInput': nameInput,
+            'commentInput': commentInput,
+        };
 
-        let docs = await getDocs(collection(db, "guestbookEntries"));
-        docs.forEach((doc) => {
-            let row = doc.data();
-            console.log(row);
+        await addDoc(collection(db, "guestbookEntries"), doc);
+        alert('등록 완료!');
 
-            let nameInput = row['nameInput'];
-            let commentInput = row['commentInput'];
-        });
+        // 입력 필드 비우기
+        $('#nameInput').val('');
+        $('#commentInput').val('');
 
+        // 방명록 업데이트 (새로운 데이터를 테이블에 추가)
+        addNewEntryToTable(nameInput, commentInput);
+    } else {
+        alert("이름과 코멘트를 모두 입력하세요.");
+    }
+});
+
+// 방명록 항목을 테이블에 추가하는 함수
+function addNewEntryToTable(nameInput, commentInput) {
+    let temp_html = `
+        <tr>
+            <td>${nameInput}</td>
+            <td>${commentInput}</td>
+        </tr>
+    `;
+    $('#guestbookEntries').prepend(temp_html); // 새 항목을 테이블 상단에 추가
+}
+
+// 페이지 로딩 시 Firestore 데이터 불러오기
+async function loadGuestbookEntries() {
+    // 기존 방명록 데이터 지우기
+    $('#guestbookEntries').empty();
+
+    // Firestore에서 방명록 데이터 가져오기
+    let docs = await getDocs(collection(db, "guestbookEntries"));
+    docs.forEach((doc) => {
+        let row = doc.data();
+        let nameInput = row['nameInput'];
+        let commentInput = row['commentInput'];
+
+        // 데이터가 유효한 경우 테이블에 추가
+        if (nameInput !== "" && commentInput !== "") {
+            let temp_html = `
+                <tr>
+                    <td>${nameInput}</td>
+                    <td>${commentInput}</td>
+                </tr>
+            `;
+            $('#guestbookEntries').prepend(temp_html); // 최근 항목이 상단에 오도록 추가
+        }
+    });
+}
+
+// 페이지 로딩 시 방명록 항목 불러오기
+loadGuestbookEntries();
     </script>
 
 
