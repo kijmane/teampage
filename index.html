@@ -48,7 +48,7 @@ $("#submitButton").click(async function () {
             'commentInput': commentInput,
         };
 
-        await addDoc(collection(db, "guestbookEntries"), doc);
+        await addDoc(collection(db, "guestbookEntrie"), doc);
         alert('등록 완료!');
 
         // 입력 필드 비우기
@@ -70,16 +70,16 @@ function addNewEntryToTable(nameInput, commentInput) {
             <td>${commentInput}</td>
         </tr>
     `;
-    $('#guestbookEntries').prepend(temp_html); // 새 항목을 테이블 상단에 추가
+    $('#guestbookEntrie').prepend(temp_html); // 새 항목을 테이블 상단에 추가
 }
 
 // 페이지 로딩 시 Firestore 데이터 불러오기
-async function loadGuestbookEntries() {
+async function loadGuestbookEntrie() {
     // 기존 방명록 데이터 지우기
-    $('#guestbookEntries').empty();
+    $('#guestbookEntrie').empty();
 
     // Firestore에서 방명록 데이터 가져오기
-    let docs = await getDocs(collection(db, "guestbookEntries"));
+    let docs = await getDocs(collection(db, "guestbookEntrie"));
     docs.forEach((doc) => {
         let row = doc.data();
         let nameInput = row['nameInput'];
@@ -99,7 +99,7 @@ async function loadGuestbookEntries() {
 }
 
 // 페이지 로딩 시 방명록 항목 불러오기
-loadGuestbookEntries();
+loadGuestbookEntrie();
     </script>
 
 
@@ -253,7 +253,7 @@ loadGuestbookEntries();
                             <th>코멘트</th>
                             </tr>
                     </thead>
-                    <tbody id="guestbookEntries"></tbody>
+                    <tbody id="guestbookEntrie"></tbody>
                 </table>
             </div>
 
